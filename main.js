@@ -78,7 +78,7 @@ if (path.split('/')[1] === 'm') {
         logger.log(status);
       }
   
-			return Promise.resolve(createResponse(200, {'Content-Type': ['text/html'] }, '<html><body>' + body + '</body></html>'));
+      return Promise.resolve(createResponse(200, {'Content-Type': ['text/html'] }, '<html><body>' + body + '</body></html>'));
       break;
       
     case 'update':
@@ -109,7 +109,7 @@ if (path.split('/')[1] === 'm') {
         logger.log(status); 
       }
 
-			return Promise.resolve(createResponse(200, {'Content-Type': ['text/html'] }, '<html><body>' + body + '</body></html>'));			
+      return Promise.resolve(createResponse(200, {'Content-Type': ['text/html'] }, '<html><body>' + body + '</body></html>'));			
       break;
       
     case 'delete':
