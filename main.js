@@ -17,7 +17,6 @@ export async function responseProvider (request) {
   // Request path
   const path = request.path;
 
-  // Serve Redirects
   // If the request path contains /r/ then we are serving a redirect
   if (path.split('/')[1] === 'r') {
     let key = path.split('/')[2];
@@ -28,14 +27,13 @@ export async function responseProvider (request) {
         redirectUrl = await edgeKv.getText({ item: key, default_value: undefined });
         logger.log('checking ID ' + key + ".  EdgeKV contained: "+ redirectUrl );
     } catch (error) {        
-        logger.log("Error updating redirect: " + error);         
+        logger.log("Error serving redirect: " + error);         
     }    
 
     // If the redirect exists, return a 302 response.  Otherwise server a 404 error
     if (redirectUrl != undefined && redirectUrl != null) {
       return Promise.resolve(createResponse(302, {'Location': [redirectUrl] }, '')); 
     } else {
-      logger.log('bypassing - redirectURL=: '+ redirectUrl );
       return Promise.resolve(createResponse(404, {'Content-Type': ['text/html'] }, '<html><body>Redirect not found</body></html>')); 
     }
   } 
