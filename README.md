@@ -1,7 +1,7 @@
 Akamai EdgeWorkers - URL Shortener
 ==================================
 
-This is a demo of a URL shortner application that is fully contained within Akamai EdgeWorkers. The code used to serve the redirects, manage the redirects and display this documention lives within an EdgeWorker application that you can review here. All of the Redirect mappings are stored in EdgeKV
+This is a demo of a URL shortner application that is fully contained within Akamai EdgeWorkers. The code used to serve the redirects and manage the redirects lives within an EdgeWorker application that you can review here. All of the Redirect mappings are stored in EdgeKV
 
 **Testing redirects:**
 
